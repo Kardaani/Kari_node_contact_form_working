@@ -1,19 +1,30 @@
-var express = require('express');
-var nodemailer = require('nodemailer');
+const express = require('express');
+const xoauth2 = require('xoauth2');
+const nodemailer = require('nodemailer');
 //var config = require('./config.js');
-
+const ejs = require('ejs');
+const fs = require('fs');
 var app = express();
 
-var smtpTransport = nodemailer.createTransport("SMTP", {
 
-    service: 'Gmail',
+let smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
-        // enter your gmail account
-        user: 'GMAIL_USER',
-        // enter your gmail password
-        pass: 'GMAIL_PASS'
+        user: 'xxxx@gmail.com',
+        pass: 'yyyy'
     }
 });
+
+
+
+
+
+
+
+
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -32,7 +43,8 @@ app.get('/send', function (req, res) {
     }
 
     console.log(mailOptions);
-    smtpTransport.sendMail(mailOptions, function (err, response) {
+
+    smtpTrans.sendMail(mailOptions, function (err, response) {
         if (err) {
             console.log(err);
             res.end("error");

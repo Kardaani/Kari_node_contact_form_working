@@ -5,20 +5,26 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+        "start": "node server.js",
+        "build": "react-scripts build"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/stackriot/node-contact-form.git"
+        "url": ""
     },
-    "author": "Seth Bergman",
+    "author": "Kari Eronen",
     "license": "ICS",
     "bugs": {
-        "url": "https://github.com/stackriot/node-contact-form/issues"
+        "url": ""
     },
-    "homepage": "https://github.com/stackriot/node-contact-form#readme",
+    "homepage": "",
     "dependencies": {
+        "ejs": "^2.5.7",
         "express": "^4.13.4",
-        "nodemailer": "0.7.1"
+        "fs": "0.0.1-security",
+        "nodemailer": "^4.6.0",
+        "react-scripts": "^1.1.1",
+        "smtp": "^0.1.4",
+        "xoauth2": "^1.2.0"
     }
 }
